@@ -1,10 +1,14 @@
 /* Universal Styles */
 
 html {
-  font-family: "Roboto", sans-serif;
+  font-family:"Roboto", sans-serif;
   font-size: 16px;
 }
 
+@font-face{
+  font-family: "Roboto";
+  src: url(https://fonts.googleapis.com/css?family=Roboto:300,400,600,700);
+}
 .main-content {
   position: relative;
   top: 5.3125rem; /* To offset for fixed header. */
@@ -26,6 +30,7 @@ html {
 
 .image-container img {
   display: block;
+  max-width: 100%;
 }
 
 @media only screen and (max-width: 760px) {
@@ -120,6 +125,8 @@ header .mobile {
   align-items: flex-start;
   height: 43.5rem;
   background-image: url("https://s3.amazonaws.com/codecademy-content/courses/freelance-1/capstone-1/solution/resources/images/banner-landingpage.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
 
 }
 
@@ -192,6 +199,7 @@ header .mobile {
 
   #sign-up-cta h1 {
     font-size: 3.125rem;
+    padding-top: 2rem;
   }
 
   #sign-up-cta h2 {
@@ -206,10 +214,12 @@ header .mobile {
 
   #sign-up-cta h1 {
     font-size: 2.25rem;
+    width: 320px;
   }
 
   #sign-up-cta h2 {
     font-size: 2rem;
+    width: 320px;
   }
 }
 
@@ -233,6 +243,10 @@ header .mobile {
   width: 90%;
   height: 65%;
   margin: 0 auto;
+}
+
+.feature .content {
+  padding: 2.5rem 0;
 }
 
 .feature h2 {
@@ -277,8 +291,11 @@ header .mobile {
 /* Filters Section */
 
 #filters-section {
+  display: flex;
+  flex-wrap: wrap;
   padding: 4rem 0;
   background-color: #4a4a4a;
+  justify-content: center;
 }
 
 #filters-section .content {
@@ -300,9 +317,16 @@ header .mobile {
 }
 
 #filters-section .images-container {
+  display: flex;
   max-width: 100%;
-  padding: 0 1%;
+  padding: 0 1% 62px;
 }
+
+#filters-section .image-container {
+  display: flex;
+  max-width: 100%;
+}
+
 
 @media only screen and (max-width: 760px) {
   #filters-section {
@@ -338,13 +362,15 @@ header .mobile {
 
 #quotes-section {
   background-color: #f3f3f3;
+  padding-top: 80px;
+  padding-bottom: 80px;
 }
 
 #quotes-section content {
   padding: 5rem 0;
 }
 
-#quotes-section quote {
+#quotes-section .quote {
   padding-right: 1.875rem;
   font-family: "Palatino", serif;
   font-size: 1.875rem;
@@ -362,7 +388,7 @@ header .mobile {
     padding: 1.875rem .625rem;
   }
 
-  #quotes-section quote {
+  #quotes-section .quote {
     font-size: 1.5rem;
     line-height: 1.4;
   }
@@ -377,8 +403,10 @@ header .mobile {
 /* Footer */
 
 footer {
+  display: flex;
   background-color: #9b9b9b;
   padding: 1.5rem 2rem;
+  height: 62px;
 }
 
 footer .content {
@@ -389,6 +417,11 @@ footer .content {
 
 footer .copyright {
   flex-grow: 1;
+  padding-top: 30px;
+}
+
+footer .location{
+  padding-top: 30px;
 }
 
 @media only screen and (min-width: 760px) {
